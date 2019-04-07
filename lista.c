@@ -188,7 +188,7 @@ int carregar(PTR_LISTA lista) {
 
 
 
-float retorna_media_imc(PTR_LISTA lista){
+float retorna_media_imc(PTR_LISTA lista){ // Parte do Lucas
     PTR_CELULA media_imc=(PTR_CELULA)malloc(sizeof(PTR_CELULA));
 
     if(lista->tamanho == 0){
@@ -219,7 +219,7 @@ float retorna_media_imc(PTR_LISTA lista){
     return media;
 }
 
-void retorna_desvio_padrao(PTR_LISTA lista){
+void retorna_desvio_padrao(PTR_LISTA lista){ // Parte do Gabriel
     PTR_CELULA d_padrao =(PTR_CELULA)malloc(sizeof(PTR_CELULA));
 
     if(lista->tamanho == 0){
@@ -257,4 +257,127 @@ void retorna_desvio_padrao(PTR_LISTA lista){
 
     system("pause");
 
+}
+
+void retorna_maior_altura(PTR_LISTA lista)
+{
+    PTR_CELULA maior_altura = (PTR_CELULA)malloc(sizeof(PTR_CELULA));
+     if (lista->tamanho == 0){
+         printf("Nao tem aluno adicionado!");
+     }
+      maiora_altura = lista->inicio;
+     else if (lista->tamanho == 1 && maior_altura->proxima == NULL){
+         printf("%s", maiora_altura->altura); // RETORNA 1 ALUNO
+     }
+	else{
+    maiora_altura = lista->inicio;
+    PTR_CELULA temp = maior_altura->proxima;
+    while (temp != NULL)
+    {
+
+        if(maior_altura->altura < temp->altura)
+        {
+            maior_altura = temp;
+        }
+     temp = temp->proxima;
+
+    }
+	printf("%.2f", maior_altura->altura);
+	}
+    
+  
+    system("pause");
+}
+
+
+void retorna_menor_altura(PTR_LISTA lista)
+{
+    PTR_CELULA menor_altura = (PTR_CELULA)malloc(sizeof(PTR_CELULA));
+     if (lista->tamanho == 0){
+         printf("Nao tem aluno adicionado!");
+     }
+      menor_altura = lista->inicio;
+     else if (lista->tamanho == 1 && menor_altura->proxima == NULL){
+         printf("%s", menor_altura->altura); // RETORNA 1 ALUNO
+     }
+	else{
+    menor_altura = lista->inicio;
+    PTR_CELULA temp = menor_altura->proxima;
+    while (temp != NULL)
+    {
+
+        if(menor_altura->altura > temp->altura)
+        {
+            menor_altura = temp;
+        }
+     temp = temp->proxima;
+
+    }
+	printf("%.2f", menor_altura->altura);
+	}
+    
+    system("pause");
+}
+
+
+
+void retorna_maior_massa(PTR_LISTA lista)
+{
+    PTR_CELULA maior_massa = (PTR_CELULA)malloc(sizeof(PTR_CELULA));
+     if (lista->tamanho == 0){
+         printf("Nao tem aluno adicionado!");
+     }
+      maior_massa = lista->inicio;
+     else if (lista->tamanho == 1 && maior_massa->proxima == NULL){
+         printf("%s", maior_massa->massa); // RETORNA 1 ALUNO
+     }
+   	else{
+    maior_massa = lista->inicio;
+    PTR_CELULA temp = maior_massa->proxima;
+    while (temp != NULL)
+    {
+
+        if(maior_massa->massa < temp->massa)
+        {
+            maior_massa = temp;
+        }
+     temp = temp->proxima;
+
+    }
+
+    printf("%.2f", maior_massa->massa);
+	}
+ 
+    system("pause");
+}
+
+
+
+void retorna_menor_massa(PTR_LISTA lista)
+{
+    PTR_CELULA menor_massa = (PTR_CELULA)malloc(sizeof(PTR_CELULA));
+     if (lista->tamanho == 0){
+         printf("Nao tem aluno adicionado!");
+     }
+      menor_massa = lista->inicio;
+     else if (lista->tamanho == 1 && menor_massa->proxima == NULL){
+         printf("%s", menor_massa->masa); // RETORNA 1 ALUNO
+     }
+     else{
+    menor_massa = lista->inicio;
+    PTR_CELULA temp = menor_massa->proxima;
+    while (temp != NULL)
+    {
+
+        if(menor_massa->massa > temp->massa)
+        {
+            menor_massa = temp;
+        }
+     temp = temp->proxima;
+
+    }
+ 	printf("%.2f", menor_massa->massa);
+	}
+    
+    system("pause");
 }

@@ -67,10 +67,11 @@ void tela(){
         gotoxy(45,19);printf("8 - Salvar em um Arquivo Binário");
         gotoxy(45,20);printf("9 - Carregar de um Arquivo Binário");
         gotoxy(45,21);printf("10 - Exibe a Media do IMC e o Desvio Padrão"); // Opção para Exibir a Media do IMC e o Desvio Padrão
-        gotoxy(45,22);printf("0 - Sair");
+        gotoxy(45,22);printf("11 - Exibe Maior e menor altura Exibe Maior e menor Massa");// Opção para Exibir os funções do Davi
+        gotoxy(45,23);printf("0 - Sair");
 
-        gotoxy(45,24);printf("Escolha a opção desejada: ");
-        gotoxy(71,24);scanf("%d",&opcao);
+        gotoxy(45,25);printf("Escolha a opção desejada: ");
+        gotoxy(71,25);scanf("%d",&opcao);
         fflush(stdin);
         system("cls");
 
@@ -86,7 +87,8 @@ void tela(){
             case 7: salvar_alunos(lista);break;
             case 8: salvar_binario(lista);break;
             case 9: carregar_alunos(lista);break;
-            case 10: retorna_media_imc(lista); retorna_desvio_padrao(lista);break;
+            case 10: retorna_media_imc(lista); retorna_desvio_padrao(lista);break; // Chamada das funções de Media e desvio do IMC
+            case 11: retorna_maior_altura(lista); retorna_menor_altura(lista); retorna_maior_massa(PTR_LISTA lista); retorna_menor_massa(PTR_LISTA lista);break; // Chamada das funções do Davi e do Samuel
         }
     }
     system("pause");
