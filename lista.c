@@ -381,3 +381,25 @@ void retorna_menor_massa(PTR_LISTA lista)
     
     system("pause");
 }
+
+void ordena(PTR_LISTA lista) //essa é a função ordena
+{
+    PTR_CELULA temp = (PTR_CELULA)malloc(sizeof(PTR_CELULA));
+    PTR_CELULA temp2 ;
+    temp = lista->inicio;
+
+    while(temp != NULL){
+
+       if(strcmp(temp->nome,temp->proxima->nome) > 0){
+        {
+        temp2 = temp;
+        temp = temp->proxima;
+        temp->proxima = temp2;
+        }
+        free(temp2);
+        temp = temp->proxima;
+    }
+
+   system("pause");
+
+}
