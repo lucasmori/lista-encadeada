@@ -212,7 +212,7 @@ float retorna_media_imc(PTR_LISTA lista){ // Parte do Lucas
     }
 
     media = soma_dos_imc/contador;
-    printf("%.2f\n", media);
+    printf("\n Media%.2f\n\n", media);
 
     system("pause");
 
@@ -228,7 +228,7 @@ void retorna_desvio_padrao(PTR_LISTA lista){ // Parte do Gabriel
 
      PTR_CELULA temp = lista->inicio;
     if(lista->tamanho == 1 && temp ->proxima == NULL){
-        printf("%f", temp->imc);
+        printf("\n Desvio: %.2f\n\n", temp->imc);
     }
 
     int contador=0;
@@ -253,24 +253,21 @@ void retorna_desvio_padrao(PTR_LISTA lista){ // Parte do Gabriel
 
     desvio = sqrt(resultado_final_variancia);
 
-    printf("%.2f\n\n",  desvio);
+    printf("\n Desvio: %.2f\n\n",  desvio);
 
     system("pause");
 
 }
 
-void retorna_maior_altura(PTR_LISTA lista)
-{
+void retorna_maior_altura(PTR_LISTA lista){
     PTR_CELULA maior_altura = (PTR_CELULA)malloc(sizeof(PTR_CELULA));
-     if (lista->tamanho == 0){
-         printf("Nao tem aluno adicionado!");
-     }
-      maiora_altura = lista->inicio;
-     else if (lista->tamanho == 1 && maior_altura->proxima == NULL){
-         printf("%s", maiora_altura->altura); // RETORNA 1 ALUNO
+
+      maior_altura = lista->inicio;
+     if (lista->tamanho == 1 && maior_altura->proxima == NULL){
+         printf("\n Maior  Altura: %.2f\n\n", maior_altura->altura); // RETORNA 1 ALUNO
      }
 	else{
-    maiora_altura = lista->inicio;
+    maior_altura = lista->inicio;
     PTR_CELULA temp = maior_altura->proxima;
     while (temp != NULL)
     {
@@ -282,23 +279,19 @@ void retorna_maior_altura(PTR_LISTA lista)
      temp = temp->proxima;
 
     }
-	printf("%.2f", maior_altura->altura);
+	printf("\n Maior  Altura: %.2f\n\n", maior_altura->altura);
 	}
-    
-  
-    system("pause");
+
+
 }
 
 
-void retorna_menor_altura(PTR_LISTA lista)
-{
+void retorna_menor_altura(PTR_LISTA lista){
     PTR_CELULA menor_altura = (PTR_CELULA)malloc(sizeof(PTR_CELULA));
-     if (lista->tamanho == 0){
-         printf("Nao tem aluno adicionado!");
-     }
+
       menor_altura = lista->inicio;
-     else if (lista->tamanho == 1 && menor_altura->proxima == NULL){
-         printf("%s", menor_altura->altura); // RETORNA 1 ALUNO
+     if (lista->tamanho == 1 && menor_altura->proxima == NULL){
+         printf("\n Menor Altura: %.2f\n\n", menor_altura->altura); // RETORNA 1 ALUNO
      }
 	else{
     menor_altura = lista->inicio;
@@ -313,23 +306,19 @@ void retorna_menor_altura(PTR_LISTA lista)
      temp = temp->proxima;
 
     }
-	printf("%.2f", menor_altura->altura);
+	printf("\n Menor Altura: %.2f\n\n", menor_altura->altura);
 	}
-    
-    system("pause");
+
 }
 
 
 
-void retorna_maior_massa(PTR_LISTA lista)
-{
+void retorna_maior_massa(PTR_LISTA lista){
     PTR_CELULA maior_massa = (PTR_CELULA)malloc(sizeof(PTR_CELULA));
-     if (lista->tamanho == 0){
-         printf("Nao tem aluno adicionado!");
-     }
+
       maior_massa = lista->inicio;
-     else if (lista->tamanho == 1 && maior_massa->proxima == NULL){
-         printf("%s", maior_massa->massa); // RETORNA 1 ALUNO
+     if (lista->tamanho == 1 && maior_massa->proxima == NULL){
+         printf("\n Maior Massa: %.2f\n\n", maior_massa->massa); // RETORNA 1 ALUNO
      }
    	else{
     maior_massa = lista->inicio;
@@ -345,23 +334,19 @@ void retorna_maior_massa(PTR_LISTA lista)
 
     }
 
-    printf("%.2f", maior_massa->massa);
+    printf("\n Maior Massa: %.2f\n\n", maior_massa->massa);
 	}
- 
-    system("pause");
+
+
 }
 
 
-
-void retorna_menor_massa(PTR_LISTA lista)
-{
+void retorna_menor_massa(PTR_LISTA lista){
     PTR_CELULA menor_massa = (PTR_CELULA)malloc(sizeof(PTR_CELULA));
-     if (lista->tamanho == 0){
-         printf("Nao tem aluno adicionado!");
-     }
+
       menor_massa = lista->inicio;
-     else if (lista->tamanho == 1 && menor_massa->proxima == NULL){
-         printf("%s", menor_massa->masa); // RETORNA 1 ALUNO
+     if (lista->tamanho == 1 && menor_massa->proxima == NULL){
+         printf("\n Menor Massa: %.2f\n\n", menor_massa->massa); // RETORNA 1 ALUNO
      }
      else{
     menor_massa = lista->inicio;
@@ -376,13 +361,29 @@ void retorna_menor_massa(PTR_LISTA lista)
      temp = temp->proxima;
 
     }
- 	printf("%.2f", menor_massa->massa);
+ 	printf("\n Menor Massa: %.2f\n\n", menor_massa->massa);
 	}
-    
-    system("pause");
+
 }
 
-void ordena(PTR_LISTA lista) //essa é a função ordena
+
+void todos_maior_menor(PTR_LISTA lista){
+
+    if (lista->tamanho == 0){
+        printf("\nNao tem aluno adicionado!\n\n");
+    } else{
+        retorna_menor_massa(lista);
+        retorna_maior_massa(lista);
+        retorna_menor_altura(lista);
+        retorna_maior_altura(lista);
+        }
+
+system("pause");
+}
+
+
+
+/*void ordena(PTR_LISTA lista) //essa é a função ordena
 {
     PTR_CELULA temp = (PTR_CELULA)malloc(sizeof(PTR_CELULA));
     PTR_CELULA temp2 ;
@@ -402,4 +403,6 @@ void ordena(PTR_LISTA lista) //essa é a função ordena
 
    system("pause");
 
-}
+} //samuel ai ja nao e meu
+
+*/
