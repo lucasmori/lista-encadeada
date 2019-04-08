@@ -34,5 +34,6 @@ void retorna_maior_altura(PTR_LISTA lista);
 void retorna_menor_altura(PTR_LISTA lista);
 void retorna_maior_massa(PTR_LISTA lista);
 void retorna_menor_massa(PTR_LISTA lista);
+void todos_maior_menor(PTR_LISTA lista);
 void ordena(PTR_LISTA lista);
 #endif
